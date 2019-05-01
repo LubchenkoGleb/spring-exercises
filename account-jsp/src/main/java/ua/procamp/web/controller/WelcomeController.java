@@ -1,5 +1,8 @@
 package ua.procamp.web.controller;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
 /**
  * Welcome controller that consists of one method that handles get request to "/" and "/welcome" and respond with a message.
  * <p>
@@ -7,6 +10,11 @@ package ua.procamp.web.controller;
  * todo: 2. Configure HTTP GET mapping "/" and "/welcome" for method {@link WelcomeController#welcome()}
  * todo: 3. Forward the request to "welcome.jsp" view
  */
+@Controller
 public class WelcomeController {
 
+    @GetMapping(value = {"/", "/welcome"})
+    public String welcomeController() {
+        return "welcome";
+    }
 }
